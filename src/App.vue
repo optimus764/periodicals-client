@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- Верхнє меню -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-4">
+      <div class="container">
+        <router-link class="navbar-brand" to="/">Періодичні видання</router-link>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Головна</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/publications">Каталог видань</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/readers">Читачі</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/subscriptions">Передплата</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Тут відображається поточна сторінка -->
+    <div class="container">
+      <router-view/>
+    </div>
+
+    <footer class="container text-muted small mt-5 mb-3">
+      Гавука Єлизавета, група ІН-403 · Технології та фреймворки реактивного програмування
+    </footer>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* активний пункт меню підсвічується */
+.navbar .router-link-exact-active {
+  color: #fff !important;
+  font-weight: 600;
 }
 </style>
